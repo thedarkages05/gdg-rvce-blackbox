@@ -1,0 +1,8 @@
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
+import sys
+real = open("/flag").read().strip()
+got = sys.stdin.read().strip() if not sys.stdin.isatty() else input("intermediate: ").strip()
+if got.strip() == "RVCE-EXIF-STEG-77ab12":
+    print(real)
+else:
+    print("Wrong intermediate. Decode EXIF comment, then extract hidden.txt from appended zip.")

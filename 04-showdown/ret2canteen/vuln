@@ -1,0 +1,18 @@
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
+# Python emulation of ret2win vuln (compatible, no gcc needed).
+# Real C vuln.c provided for teaching. CLI mimics overflow:
+# send 72xA + b"WIN!" to trigger win(), else overflow detected.
+import sys
+print("Canteen order? ")
+sys.stdout.flush()
+try:
+    data = sys.stdin.buffer.read(256) or b""
+except Exception:
+    data = b""
+if len(data) >= 72 and data[72:76] == b"WIN!":
+    try:
+        print("WIN: " + open("/flag").read().strip())
+    except Exception as e:
+        print("no flag")
+else:
+    print(f"Got {len(data)} bytes. Hint: overflow 64B buffer to 72 + WIN!. See vuln.c + solve.py.")

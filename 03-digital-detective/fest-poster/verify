@@ -1,0 +1,8 @@
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
+import sys
+real = open("/flag").read().strip()
+got = sys.stdin.read().strip() if not sys.stdin.isatty() else input("intermediate: ").strip()
+if got.strip() == "RVCE-BINWALK-8MILE-9f27c1":
+    print(real)
+else:
+    print("Wrong intermediate. Did you binwalk -e and unzip inner.txt?")

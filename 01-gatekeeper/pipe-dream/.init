@@ -1,0 +1,3 @@
+#!/bin/sh
+/usr/bin/python3 /challenge/gen.py
+exit 0

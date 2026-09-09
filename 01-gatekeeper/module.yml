@@ -1,0 +1,8 @@
+name: Gatekeeper - Own The VM
+challenges:
+  - id: ssh-bootstrap
+    name: SSH Bootstrap
+  - id: pipe-dream
+    name: Pipe Dream
+  - id: vim-escape
+    name: Vim Escape

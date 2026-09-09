@@ -1,0 +1,12 @@
+name: Showdown - Team CTF
+challenges:
+  - id: git-grave
+    name: Git Grave
+  - id: dean-pdf
+    name: Dean PDF
+  - id: rsa-kindergarten
+    name: RSA Kindergarten
+  - id: strings-lied
+    name: Strings Lied
+  - id: ret2canteen
+    name: Ret2Canteen

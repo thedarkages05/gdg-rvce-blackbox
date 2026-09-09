@@ -1,0 +1,7 @@
+#!/bin/sh
+mkdir -p /challenge/pages
+echo "Welcome to Hostel Block C. Try ?page=room101.txt" > /challenge/pages/home.txt
+echo "Room 101: warden is kind." > /challenge/pages/room101.txt
+chmod -R a+r /challenge/pages
+start-stop-daemon --start --background --pidfile /tmp/lfi.pid --make-pidfile --startas /challenge/server --
+exit 0

@@ -1,0 +1,8 @@
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
+import sys
+real = open("/flag").read().strip()
+got = sys.stdin.read().strip() if not sys.stdin.isatty() else input("intermediate: ").strip()
+if got.strip() == "RVCE-PCAP-51c9e0":
+    print(real)
+else:
+    print("Wrong intermediate. Try tshark dns + http + strings.")

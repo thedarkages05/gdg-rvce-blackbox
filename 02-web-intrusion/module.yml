@@ -1,0 +1,8 @@
+name: Web Intrusion
+challenges:
+  - id: canteen-jwt
+    name: Canteen Coupons
+  - id: hostel-lfi
+    name: Hostel LFI
+  - id: fest-ssti
+    name: Fest SSTI

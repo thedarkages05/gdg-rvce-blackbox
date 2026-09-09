@@ -1,0 +1,15 @@
+id: gdg-rvce-blackbox
+name: "GDG RVCE: Blackbox"
+description: |
+  Incident Response orientation for GDG RVCE Cybersecurity Vertical.
+  Story: 8th Mile attendance portal was breached. You are the IR team.
+  M1-M3 guided. M4 team showdown (2-3 per team).
+  Prereq: pwn.college VM works in browser. WSL/Linux + SSH recommended.
+  After this: Linux Luminarium -> Computing 101 -> Intro to Cybersecurity.
+type: course
+password: "rvce2026"
+modules:
+  - id: 01-gatekeeper
+  - id: 02-web-intrusion
+  - id: 03-digital-detective
+  - id: 04-showdown

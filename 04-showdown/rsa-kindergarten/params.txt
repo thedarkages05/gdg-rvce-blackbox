@@ -1,0 +1,5 @@
+n=1329227995785002090679764570281989089
+e=65537
+c=224985365650225973530169307622688816
+# hint: p,q close. Fermat: a=ceil(sqrt(n)), check a*a-n is square.
+# intermediate int decodes via long_to_bytes -> RVCE-RSA-41c9

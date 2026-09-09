@@ -1,0 +1,8 @@
+name: Digital Detective
+challenges:
+  - id: fest-poster
+    name: Fest Poster
+  - id: hostel-photo
+    name: Hostel Photo
+  - id: canteen-pcap
+    name: Canteen WiFi

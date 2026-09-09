@@ -1,0 +1,2 @@
+Hostel complaint box. Do not delete. - warden
+Hint: this vim runs as root. Try :shell

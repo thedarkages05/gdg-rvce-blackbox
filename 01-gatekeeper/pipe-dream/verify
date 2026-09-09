@@ -1,0 +1,13 @@
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
+import sys
+real = open("/flag").read().strip()
+try:
+    expected = open("/tmp/.expected_ip").read().strip()
+except Exception:
+    print("Log not ready. Restart challenge (Start button).")
+    raise SystemExit(1)
+got = sys.stdin.read().strip() if not sys.stdin.isatty() else input("attacker IP: ").strip()
+if got.strip() == expected:
+    print(real)
+else:
+    print("Wrong IP. Hint: grep 404 | cut | sort | uniq -c")

@@ -1,0 +1,20 @@
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
+# Python stand-in for compiled crackme (fully compatible, no gcc needed).
+# Behaves like a C binary: fake strings decoy + xor check.
+# Real ELF can replace this file later with same CLI.
+import sys
+FAKE = "RVCE{strings_are_always_right_lol}"
+KEY = "rvce-rocks-77"
+# hint for strings: leave decoy in source
+# RVCE{strings_are_always_right_lol}
+if len(sys.argv) < 2:
+    print("Usage: ./crackme <key>")
+    print("Hint: strings shows " + FAKE + " but it is fake. Try ltrace/objdump/python dis.")
+    raise SystemExit(1)
+# xor check (mimics C loop)
+want = [ord(c) ^ 0x42 for c in KEY]
+got = [ord(c) ^ 0x42 for c in sys.argv[1]]
+if list(got) == want:
+    print(open("/flag").read().strip())
+else:
+    print("Nope. Wrong key.")
