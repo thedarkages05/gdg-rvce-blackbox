@@ -1,11 +1,10 @@
-#!/usr/bin/exec-suid -- /usr/bin/python3 -I
-import os
-if not os.environ.get("SSH_CONNECTION"):
-    print("Denied: no SSH_CONNECTION. Use ssh, not the browser terminal.")
-    print("See DESCRIPTION.md: add key in Settings, then ssh hacker@<instance>.")
-    raise SystemExit(1)
-if not os.environ.get("TMUX"):
-    print("Denied: not in tmux. Run: tmux new -s ir")
-    raise SystemExit(1)
-with open("/flag") as f:
-    print(f.read())
+#!/bin/sh
+if [ -z "$SSH_CONNECTION" ]; then
+  echo "Denied: no SSH_CONNECTION. Use ssh from WSL, not browser."
+  exit 1
+fi
+if [ -z "$TMUX" ]; then
+  echo "Denied: not in tmux. Run: tmux new -s ir"
+  exit 1
+fi
+exec /challenge/print-flag
